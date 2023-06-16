@@ -5,9 +5,9 @@
 - [Download website](https://data.ceda.ac.uk/neodc/esacci/soil_moisture/data/daily_files/COMBINED/v07.1/1980)</p>
 
 - I downloaded daily nc files covering 19800101-20191231 via [FTP](https://help.ceda.ac.uk/article/280-ftp), saved in **'../DATA_org'** with yearly sub-directories.
-<center><img src="./readme_pic/Screenshot from 2023-06-16 20-02-36.png" width="60%"></center>
+<center><img src="./readme_pic/Screenshot from 2023-06-16 20-02-36.png" width="80%"></center>
 
-<center><img src="./readme_pic/Screenshot from 2023-06-16 20-04-19.png" width="60%"></center>
+<center><img src="./readme_pic/Screenshot from 2023-06-16 20-04-19.png" width="80%"></center>
 
 - The time range I chose here is **1980.01.01-2019.12.31**
 - Each file is named "ESACCI-SOILMOISTURE-L3S-SSMV-COMBINED-YYYYMMDD000000-fv07.1.nc"
