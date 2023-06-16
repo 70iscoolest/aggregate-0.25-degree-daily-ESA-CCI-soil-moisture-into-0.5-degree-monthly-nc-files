@@ -25,10 +25,10 @@
 1. [average_monthly_nc_esacci.py](https://github.com/70iscoolest/aggregate-0.25-degree-daily-ESA-CCI-soil-moisture-into-0.5-degree-monthly-nc-files/blob/master/average_monthly_nc_esacci.py) aims to average daily values into monthly values
 2. [resample_nc_esacci.py](https://github.com/70iscoolest/aggregate-0.25-degree-daily-ESA-CCI-soil-moisture-into-0.5-degree-monthly-nc-files/blob/master/resample_nc_esacci.py) aims to interpolate monthly files with 0.25$\degree$ to monthly files with 0.5$\degree$, and a nc file combining all monthly files along "time" array is also generated.
 
-# 4. Visulazation
+# 4. Visualization
 
 - plot aggregated and interpolated nc file
-<center><img src="./readme_pic/201906.png" width="60%"></center>
+<center><img src="./readme_pic/201906.png" width="100%"></center>
 
 
 # 5. Citation
