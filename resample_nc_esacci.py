@@ -8,20 +8,15 @@ def interpolation(year, m, lats, lons):
     return new_nc
 
 
-
-
 if __name__ == '__main__':
     import os
-    import glob
     import xarray as xr
-    import netCDF4 as nc
     import numpy as np
-    from print_logging import *
     import warnings
-    # import scipy
+
     warnings.filterwarnings("ignore")
 
-    log_dir = './log/'
+    # log_dir = './log/'
     # if not os.path.exists(log_dir):
     #     os.mkdir(log_dir)
 

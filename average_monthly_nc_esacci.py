@@ -2,7 +2,7 @@ def assign_nan(nc_file):
     nc_org = xr.open_dataset(nc_file)
     # replace missing values with NaN
     sm_values = nc_org.variables['sm'][:].data
-    R = np.where(sm_values == -9999.0)
+    R = np.where(sm_values == -9999.0) # missing values were assigned with -9999.0
     sm_values[R] = np.nan
     sm_values.astype(np.float32)
 
@@ -70,14 +70,14 @@ if __name__ == '__main__':
     if not os.path.exists(log_dir):
         os.mkdir(log_dir)
 
-    make_print_to_file(log_dir, 'average_monthly_nc_esacci_0616.py')
+    make_print_to_file(log_dir, 'average_monthly_nc_esacci_0616.py') #print to txt
 
-    nc_dir = '../DATA_org/'
-    op_dir = '../DATA_monthly'
+    nc_dir = '../DATA_org/'#where original daily files are saved
+    op_dir = '../DATA_monthly'#where monthly nc files will be saved
     if not os.path.exists(op_dir):
         os.mkdir(op_dir)
 
-    years = range(2000, 2001)
+    years = range(1980, 2020)
     mon = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
     for year in years:
