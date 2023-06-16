@@ -10,7 +10,7 @@
 <center><img src="./readme_pic/Screenshot from 2023-06-16 20-04-19.png" width="60%"></center>
 
 - The time range I chose here is **1980.01.01-2019.12.31**
-- Each file is named as "ESACCI-SOILMOISTURE-L3S-SSMV-COMBINED-YYYYMMDD000000-fv07.1.nc"
+- Each file is named "ESACCI-SOILMOISTURE-L3S-SSMV-COMBINED-YYYYMMDD000000-fv07.1.nc"
 - As only daily nc files with 0.25 $\degree$ are provided, but I need monthly nc files with 0.5$\degree$ spatial resolution, so the original daily files need to be resampled and interpolated.
 
 # 2. Environment
@@ -20,7 +20,7 @@
 - Python (3.10)
 - main packages: netCDF4 (1.6.4), xarray (2023.3.0)
 
-# 3. introduction
+# 3. Introduction
 
 1. [average_monthly_nc_esacci.py](https://github.com/70iscoolest/aggregate-0.25-degree-daily-ESA-CCI-soil-moisture-into-0.5-degree-monthly-nc-files/blob/master/average_monthly_nc_esacci.py) aims to average daily values into monthly values
 2. [resample_nc_esacci.py](https://github.com/70iscoolest/aggregate-0.25-degree-daily-ESA-CCI-soil-moisture-into-0.5-degree-monthly-nc-files/blob/master/resample_nc_esacci.py) aims to interpolate monthly files with 0.25$\degree$ to monthly files with 0.5$\degree$, and a nc file combining all monthly files along "time" array is also generated.
@@ -31,7 +31,7 @@
 <center><img src="./readme_pic/201906.png" width="60%"></center>
 
 
-# 4. Citation
+# 5. Citation
 The data set should be cited using the following references:
 
 1. Gruber, A., Scanlon, T., van der Schalie, R., Wagner, W., and Dorigo, W. (2019). Evolution of the ESA CCI Soil Moisture climate data records and their underlying merging methodology, Earth Syst. Sci. Data, 11, 717–739, https://doi.org/10.5194/essd-11-717-2019
