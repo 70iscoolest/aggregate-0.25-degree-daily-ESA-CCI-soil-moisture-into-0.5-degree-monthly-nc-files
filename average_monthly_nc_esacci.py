@@ -35,19 +35,28 @@ def month_aggregate(year, m):
 
     filename = os.path.join(op_dir, 'ESACCI_SM_' + str(year) + m + '_agg.nc')
 
-    mon_nc = nc.Dataset(filename, 'w', format='NETCDF4')
-    mon_nc.createDimension('latitude', len(ref_lat))
-    mon_nc.createDimension('longitude', len(ref_lon))
-    mon_nc.createDimension('time', len(ref_time))
+    mean_nc = nc.Dataset(op_ncfilename, "w", format="NETCDF4")
+    mean_nc.createDimension("latitude", len(ref_lat))
+    mean_nc.createDimension("longitude", len(ref_lon))
+    mean_nc.createDimension("time", 1)
 
-    mon_nc.createVariable("latitude", 'f', ("latitude"))
-    mon_nc.createVariable("longitude", 'f', ("longitude"))
-    mon_nc.createVariable("time", 'f', ("time"))
+    mean_nc.createVariable("latitude", "f", ("latitude"))
+    mean_nc.createVariable("longitude", "f", ("longitude"))
+    settime = mean_nc.createVariable("time", ref_nc.variables['time'].datatype,
+                                  ref_nc.variables['time'].dimensions)
+    settime.units = ref_nc.variables['time'].units
+    settime.longname = 'time'
 
-    mon_nc.createVariable("sm", 'f', ("time", "latitude", "longitude"))
-    mon_nc.variables['latitude'][:] = ref_lat
-    mon_nc.variables['longitude'][:] = ref_lon
+
+    mean_nc.createVariable(varname="sm", datatype="f", dimensions = ("time", "latitude", "longitude"), fill_value=1.e20)
+
+    mean_nc.variables["latitude"][:] = ref_lat
+    mean_nc.variables["longitude"][:] = ref_lon
+
+    mean_nc.variables["time"][:] = ref_time
+
     mon_nc.variables['sm'][:] = mean_sm_values
+    
 
     ref_nc.close()
     mon_nc.close()
